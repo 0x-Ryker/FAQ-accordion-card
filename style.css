@@ -171,6 +171,7 @@ article h1 {
         display: block;
         position: absolute;
         bottom: -10px;
+        width: 80%;
     }
 
     .flex-container {
@@ -183,10 +184,11 @@ article h1 {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
       
       .accordion-img {
-        width: 50%;
+        /* width: 80%; */
       }
     
 }
