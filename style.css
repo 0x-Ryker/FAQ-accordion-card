@@ -50,66 +50,70 @@ body {
     background-size: contain;
 }
 
-h1 {
-    text-align: center;
+
+/* Accordion section  */
+
+article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* acc */
-/* Sets the width for the accordion. Sets the margin to 90px on the top and bottom and auto to the left and right */
+article h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
 
 .accordion {
-    width: 800px;
-    margin: 90px auto;
-    color: black;
     background-color: white;
-    padding: 45px 45px;
-  }
-
-  .accordion .container {
-    position: relative;
-    margin: 10px 10px;
-  }
-  
-  /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
-  
-  .accordion .label {
-    position: relative;
-    padding: 10px 0;
-    /* font-size: 30px; */
-    color: black;
+    color: rgb(0, 0, 0);
     cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    border-radius: 0;
+    width: 90%;
+    padding: 30px;
   }
-
   
-/* Positions the plus sign 5px from the right. Centers it using the transform property. */
-
-.accordion .label::before {
-    content: '+';
+  .active, .accordion:hover {
+    background-color: #f0f0f0;
+    
+  }
+  
+  .accordion:after {
+    content: url(images/icon-arrow-down.svg); width: 1px;
     color: black;
-    position: absolute;
-    top: 50%;
-    right: -5px;
-    font-size: 30px;
-    transform: translateY(-50%);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    
   }
   
-  /* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+  .active:after {
+    content: url(images/icon-arrow-down.svg); width: 1px; transform: rotate(180deg);
+    color: black;
+    
+  }
   
-  .accordion .content {
-    position: relative;
-    background: white;
-    height: 0;
-    font-size: 20px;
-    text-align: justify;
-    width: 780px;
+  .panel {
+    padding: 0 18px;
+    background-color: rgb(0, 0, 0);
+    max-height: 0;
     overflow: hidden;
-    transition: 0.5s;
+    transition: max-height 0.2s ease-out;
+    width: 90%;
+    background-color: #ffffff;
+    border-bottom: 1px solid gray;
+    
   }
-  
-  /* Adds a horizontal line between the contents */
-  
-  .accordion hr {
-    width: 100;
-    margin-left: 0;
-    border: 1px solid grey;
+
+  .panel p {
+    padding: 15px 10px;
   }
